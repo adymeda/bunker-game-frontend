@@ -14,7 +14,7 @@ i18next.use(initReactI18next).init({
     },
     resources: {
         en: { translation: locale_en },
-        ru: { translation: locale_ru}
+        ru: { translation: locale_ru }
     }
 })
 
