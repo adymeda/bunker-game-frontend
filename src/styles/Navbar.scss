@@ -4,6 +4,10 @@ $logo-size: 3rem;
 $logo-margin: 1rem;
 $navbar-size: $logo-size + $logo-margin * 2;
 
+body:has(.navbar.expanded) {
+    overflow: hidden;
+}
+
 .navbar {
     position: fixed;
     top: 0;
@@ -14,9 +18,17 @@ $navbar-size: $logo-size + $logo-margin * 2;
     background: rgba(0,0,0,.4);
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 1rem;
     backdrop-filter: blur(1rem);
+
+    &__spacer {
+        flex: 1;
+    }
+
+    &__mid {
+        display: flex;
+        align-items: center;
+    }
 
     &__logo {
         display: flex;
@@ -30,6 +42,7 @@ $navbar-size: $logo-size + $logo-margin * 2;
         &-slogan {
             font-size: 32px;
             display: none;
+            user-select: none;
         }
         &-burger {
             height: 50%;
@@ -57,7 +70,33 @@ $navbar-size: $logo-size + $logo-margin * 2;
         }
     }
 
-    &__spacer {
+    &__profile {
+        width: fit-content;
+        height: $logo-size;
+        margin: $logo-margin;
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        border: 2px solid transparent;
+        
+        &:hover {
+            background: rgba(20,20,20);
+            border-color: rgba(28,28,28);
+            border-radius: .5rem;
+        }
+
+        .avatar {
+            height: $logo-size - $logo-margin;
+            margin: 5px;
+        }
+
+        &-expand {
+            margin-right: .5rem;
+        }
+    }
+
+    &__afterspacer {
         width: 100%;
         height: $navbar-size;
     }
@@ -70,12 +109,30 @@ $navbar-size: $logo-size + $logo-margin * 2;
         overflow: hidden;
         transition: .5s;
 
+        &__spacer {
+            flex: 0;
+        }
+        
+        &__spacer:first-child {
+            display: none;
+        }
+
+        &__mid {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
         &__logo {
             width: 100%;
 
             &-slogan {
                 display: inline;
             }
+        }
+
+        &__profile {
+            margin-right: auto;
         }
 
         &.expanded {
