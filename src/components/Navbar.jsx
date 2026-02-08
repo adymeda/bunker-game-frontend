@@ -1,6 +1,7 @@
 import { useState } from "react"
 import "../styles/Navbar.scss"
 import BunkerIcon from "../assets/shelter-icon.png"
+import BurgerMenu from "./ui/BurgerMenu"
 
 function Navbar() {
 	const [navExpanded, setNavExpanded] = useState(false) 
@@ -11,13 +12,14 @@ function Navbar() {
 	return (
 	<>
 		<nav className={navClass}>
-			{/* img should be a button that redirects back to / path */}
 			<div className="navbar__logo">
-				<img src={BunkerIcon} draggable={false}/>
+				{/* img should be a button that redirects back to / path */}
+				<img src={BunkerIcon} draggable={false} className="navbar__logo-img"/>
 				<div className="navbar__logo-slogan">Bunker</div>
 
-				{/* TODO Burger Menu (simply add .expand to .navbar)*/}
-				<div className="navbar__logo-burger" onClick={() => setNavExpanded(!navExpanded)}></div>
+				<div className="navbar__logo-burger" onClick={() => setNavExpanded(!navExpanded)}>
+					<BurgerMenu isOpened={navExpanded}/>
+				</div>
 			</div>
 
 			<div className="navbar__buttons">

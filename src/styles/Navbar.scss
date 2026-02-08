@@ -22,7 +22,7 @@ $navbar-size: $logo-size + $logo-margin * 2;
         display: flex;
         align-items: center;
 
-        img {
+        &-img {
             width: $logo-size;
             margin: $logo-margin;
             user-select: none;
@@ -34,7 +34,6 @@ $navbar-size: $logo-size + $logo-margin * 2;
         &-burger {
             height: 50%;
             aspect-ratio: 1/1;
-            background: purple;
             margin-left: auto;
             margin-right: $logo-margin;
         }
@@ -65,7 +64,6 @@ $navbar-size: $logo-size + $logo-margin * 2;
 }
 
 @media screen and (max-width: 768px) {
-    // Add Burger menu support
     .navbar {
         flex-direction: column;
         justify-content: flex-start;
