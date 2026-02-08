@@ -1,0 +1,91 @@
+@use "variables";
+
+$logo-size: 3rem;
+$logo-margin: 1rem;
+$navbar-size: $logo-size + $logo-margin * 2;
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: $navbar-size;
+    background: rgba(0,0,0,.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    backdrop-filter: blur(1rem);
+
+    &__logo {
+        display: flex;
+        align-items: center;
+
+        img {
+            width: $logo-size;
+            margin: $logo-margin;
+            user-select: none;
+        }
+        &-slogan {
+            font-size: 32px;
+            display: none;
+        }
+        &-burger {
+            height: 50%;
+            aspect-ratio: 1/1;
+            background: purple;
+            margin-left: auto;
+            margin-right: $logo-margin;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin: 0 1rem;
+    }
+
+    &__button {
+        font-size: 20px;
+        color: #ccc;
+        cursor: pointer;
+        user-select: none;
+
+        &:hover {
+            color: var(--accent-main);
+        }
+    }
+
+    &__spacer {
+        width: 100%;
+        height: $navbar-size;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    // Add Burger menu support
+    .navbar {
+        flex-direction: column;
+        justify-content: flex-start;
+        overflow: hidden;
+        transition: .5s;
+
+        &__logo {
+            width: 100%;
+
+            &-slogan {
+                display: inline;
+            }
+        }
+
+        &.expanded {
+            height: 100%;
+        }
+        
+        &__buttons {
+            flex-direction: column;
+        }
+    }
+}
