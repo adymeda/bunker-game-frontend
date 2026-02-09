@@ -10,8 +10,8 @@ body:has(.navbar.expanded) {
 
 .navbar {
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
+    z-index: var(--z-navbar);
 
     width: 100%;
     height: $navbar-size;
