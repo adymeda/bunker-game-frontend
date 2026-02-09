@@ -1,4 +1,4 @@
-import "../../styles/ui/Avatar.scss"
+import "@styles/ui/Avatar.scss"
 import UserIcon from "../../assets/user-icon.png"
 
 function Avatar({ url, alt="" }) {

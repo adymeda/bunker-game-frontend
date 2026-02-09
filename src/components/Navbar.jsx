@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useTranslation } from "react-i18next"
-import "../styles/Navbar.scss"
+import "@styles/Navbar.scss"
 import BunkerIcon from "../assets/shelter-icon.png"
 import BurgerMenu from "./ui/BurgerMenu"
 import Avatar from "./ui/Avatar"

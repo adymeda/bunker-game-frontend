@@ -1,4 +1,4 @@
-import "../../styles/ui/BurgerMenu.scss"
+import "@styles/ui/BurgerMenu.scss"
 
 function BurgerMenu({ isOpened, color }) {
 	let className = "burger__button"
